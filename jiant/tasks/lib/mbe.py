@@ -1,9 +1,8 @@
-import pandas as pd
 from dataclasses import dataclass
 
 from jiant.tasks.lib.templates.shared import labels_to_bimap
 from jiant.tasks.lib.templates import multiple_choice as mc_template
-from jiant.utils.python.io import read_file_lines
+from jiant.utils.python.io import read_jsonl
 
 @dataclass
 class Example(mc_template.Example):
@@ -34,24 +33,26 @@ class MbeTask(mc_template.AbstractMultipleChoiceTask):
 	NUM_CHOICES = len(CHOICE_KEYS)
 
 	def get_train_examples(self):
-		return self._create_examples(path=self.train_path, set_type="train")
+		return self._create_examples(lines=read_jsonl(self.train_path), set_type="train")
+
+	def get_val_examples(self):
+		return self._create_examples(lines=read_jsonl(self.val_path), set_type="val")
 
 	@classmethod
-	def _create_examples(cls, path, set_type):
-		df = pd.read_csv(path)
+	def _create_examples(cls, lines, set_type):
 		examples = []
-		for i, row in enumerate(df.itertuples()):
+		for (i, line) in enumerate(lines):
 			examples.append(
 				Example(
 					guid="%s-%s" % (set_type, i),
-					prompt=row.prompt + " " + row.question,
+					prompt=line["prompt"] + " " + line["question"],
 					choice_list=[
-						row.choice_a,
-						row.choice_b,
-						row.choice_c,
-						row.choice_d
+						line["choice_a"],
+						line["choice_b"],
+						line["choice_c"],
+						line["choice_d"]
 					],
-					label=row.label if set_type != test else cls.CHOICE_KEYS[-1]
+					label=line["label"] if set_type != test else cls.CHOICE_KEYS[-1]
 					)
 				)
 		return examples

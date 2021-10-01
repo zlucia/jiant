@@ -1,9 +1,8 @@
-import pandas as pd
 from dataclasses import dataclass
 
 from jiant.tasks.lib.templates.shared import labels_to_bimap
 from jiant.tasks.lib.templates import multiple_choice as mc_template
-from jiant.utils.python.io import read_file_lines
+from jiant.utils.python.io import read_jsonl
 
 @dataclass
 class Example(mc_template.Example):
@@ -34,24 +33,23 @@ class HendrycksTestSelectTask(mc_template.AbstractMultipleChoiceTask):
 	NUM_CHOICES = len(CHOICE_KEYS)
 
 	def get_train_examples(self):
-		return self._create_examples(path=self.train_path, set_type="train")
+		return self._create_examples(lines=read_jsonl(self.train_path), set_type="train")
 
 	@classmethod
-	def _create_examples(cls, path, set_type):
-		df = pd.read_csv(path)
+	def _create_examples(cls, lines, set_type):
 		examples = []
-		for i, row in enumerate(df.itertuples()):
+		for (i, line) in enumerate(lines):
 			examples.append(
 				Example(
 					guid="%s-%s" % (set_type, i),
-					prompt=row.question,
+					prompt=line["question"],
 					choice_list=[
-						row.answer_0,
-						row.answer_1,
-						row.answer_2,
-						row.answer_3
+						line["answer_0"],
+						line["answer_1"],
+						line["answer_2"],
+						line["answer_3"]
 					],
-					label=row.label if set_type != test else cls.CHOICE_KEYS[-1]
+					label=line["label"] if set_type != test else cls.CHOICE_KEYS[-1]
 					)
 				)
 		return examples
