@@ -122,7 +122,7 @@ TASK_DICT = {
     "glue_diagnostics": GlueDiagnosticsTask,
     "hellaswag": HellaSwagTask,
     "hendrycks_test_select": HendrycksTestSelectTask,
-    "mbe": MbeTask
+    "mbe": MbeTask,
     "mctaco": MCTACOTask,
     "mctest": MCTestTask,
     "mlm_simple": MLMSimpleTask,
