@@ -49,7 +49,7 @@ class HendrycksTestSelectTask(mc_template.AbstractMultipleChoiceTask):
 						line["answer_2"],
 						line["answer_3"]
 					],
-					label=line["label"] if set_type != test else cls.CHOICE_KEYS[-1]
+					label=line["label"] if set_type != "test" else cls.CHOICE_KEYS[-1]
 					)
 				)
 		return examples

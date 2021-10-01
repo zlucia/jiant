@@ -52,7 +52,7 @@ class MbeTask(mc_template.AbstractMultipleChoiceTask):
 						line["choice_c"],
 						line["choice_d"]
 					],
-					label=line["label"] if set_type != test else cls.CHOICE_KEYS[-1]
+					label=line["label"] if set_type != "test" else cls.CHOICE_KEYS[-1]
 					)
 				)
 		return examples
