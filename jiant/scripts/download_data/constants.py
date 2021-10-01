@@ -61,5 +61,11 @@ OTHER_HF_DATASETS_TASKS = {
     "race_high",
     "quail",
     "casehold",
-    "hendrycks_test_select"
+    "hendrycks_test_select_formal_logic",
+    "hendrycks_test_select_high_school_government_and_politics",
+    "hendrycks_test_select_international_law",
+    "hendrycks_test_select_jurisprudence",
+    "hendrycks_test_select_logical_fallacies",
+    "hendrycks_test_select_moral_disputes",
+    "hendrycks_test_select_philosophy"
 }
