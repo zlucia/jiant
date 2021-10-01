@@ -10,6 +10,7 @@ DIRECT_SUPERGLUE_TASKS_TO_DATA_URLS = {
 OTHER_DOWNLOAD_TASKS = {
     "abductive_nli",
     "arct",
+    "casehold"
     "fever_nli",
     "swag",
     "qamr",

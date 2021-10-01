@@ -404,6 +404,30 @@ class MultipleChoiceAccuracyEvaluationScheme(BaseLogitsEvaluationScheme):
             preds=preds, labels=labels
         )
 
+class MultipleChoiceAccAndF1EvaluationScheme(BaseLogitsEvaluationScheme): # macro F1
+    def get_accumulator(self):
+        return ConcatenateLogitsAccumulator()
+
+    @classmethod
+    def get_labels_from_examples(cls, task, examples):
+        return get_multiple_choice_label_ids_from_examples(task=task, examples=examples)
+
+    def get_labels_from_cache_and_examples(self, task, cache, examples):
+        return get_multiple_choice_labels_from_cache(cache=cache)
+
+    def get_preds_from_accumulator(self, task, accumulator):
+        logits = accumulator.get_accumulated()
+        return np.argmax(logits, axis=1)
+
+    def compute_metrics_from_preds_and_labels(self, preds, labels):
+        acc = float((preds == labels).mean())
+        labels = np.array(labels)
+        minor = {
+            "acc": acc,
+            "f1_macro": f1_score(y_true=labels, y_pred=preds, average="macro"),
+            "acc_and_f1_macro": (acc + f1_score(y_true=labels, y_pred=preds, average="macro")) / 2,
+        }
+        return Metrics(major=minor["acc"], minor=minor)
 
 class CommitmentBankEvaluationScheme(BaseLogitsEvaluationScheme):
     def get_preds_from_accumulator(self, task, accumulator):
@@ -1026,6 +1050,8 @@ def get_evaluation_scheme_for_task(task) -> BaseEvaluationScheme:
         ),
     ):
         return MultipleChoiceAccuracyEvaluationScheme()
+    elif isinstance(task, tasks_retrieval.CaseholdTask):
+        return MultipleChoiceAccAndF1EvaluationScheme()
     elif isinstance(task, (tasks_retrieval.MrpcTask, tasks_retrieval.QqpTask)):
         return AccAndF1EvaluationScheme()
     elif isinstance(

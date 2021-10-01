@@ -11,6 +11,7 @@ from jiant.tasks.lib.arc_easy import ArcEasyTask
 from jiant.tasks.lib.arc_challenge import ArcChallengeTask
 from jiant.tasks.lib.boolq import BoolQTask
 from jiant.tasks.lib.bucc2018 import Bucc2018Task
+from jiant.tasks.lib.casehold import CaseholdTask
 from jiant.tasks.lib.ccg import CCGTask
 from jiant.tasks.lib.cola import ColaTask
 from jiant.tasks.lib.commitmentbank import CommitmentBankTask
@@ -104,6 +105,7 @@ TASK_DICT = {
     "adversarial_nli": AdversarialNliTask,
     "boolq": BoolQTask,
     "bucc2018": Bucc2018Task,
+    "casehold": CaseholdTask,
     "cb": CommitmentBankTask,
     "ccg": CCGTask,
     "cola": ColaTask,
