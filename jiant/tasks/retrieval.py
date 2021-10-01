@@ -119,6 +119,7 @@ TASK_DICT = {
     "fever_nli": FeverNliTask,
     "glue_diagnostics": GlueDiagnosticsTask,
     "hellaswag": HellaSwagTask,
+    "hendrycks_test_select": HendrycksTestSelectTask,
     "mctaco": MCTACOTask,
     "mctest": MCTestTask,
     "mlm_simple": MLMSimpleTask,

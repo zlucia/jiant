@@ -60,5 +60,6 @@ OTHER_HF_DATASETS_TASKS = {
     "race_middle",
     "race_high",
     "quail",
-    "casehold"
+    "casehold",
+    "hendrycks_test_select"
 }

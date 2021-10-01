@@ -193,6 +193,55 @@ HF_DATASETS_CONVERSION_DICT = {
         "phase_map": None,
         "label_map": {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4},
     },
+    "hendrycks_test_select_formal_logic": {
+        "path": "zlucia/hendrycks_test_select",
+        "name": "formal_logic",
+        "phase_list": ["train"],
+        "phase_map": None,
+        "jiant_task_name": "hendrycks_test_formal_logic"
+    },
+    "hendrycks_test_select_high_school_government_and_politics": {
+        "path": "zlucia/hendrycks_test_select",
+        "name": "high_school_government_and_politics",
+        "phase_list": ["train"],
+        "phase_map": None,
+        "jiant_task_name": "hendrycks_test_hs_gov_politics"
+    },
+    "hendrycks_test_select_international_law": {
+        "path": "zlucia/hendrycks_test_select",
+        "name": "international_law",
+        "phase_list": ["train"],
+        "phase_map": None,
+        "jiant_task_name": "hendrycks_test_international_law"
+    },
+    "hendrycks_test_select_jurisprudence": {
+        "path": "zlucia/hendrycks_test_select",
+        "name": "jurisprudence",
+        "phase_list": ["train"],
+        "phase_map": None,
+        "jiant_task_name": "hendrycks_test_jurisprudence"
+    },
+    "hendrycks_test_select_logical_fallacies": {
+        "path": "zlucia/hendrycks_test_select",
+        "name": "logical_fallacies",
+        "phase_list": ["train"],
+        "phase_map": None,
+        "jiant_task_name": "hendrycks_test_logical_fallacies"
+    },
+    "hendrycks_test_select_moral_disputes": {
+        "path": "zlucia/hendrycks_test_select",
+        "name": "moral_disputes",
+        "phase_list": ["train"],
+        "phase_map": None,
+        "jiant_task_name": "hendrycks_test_moral_disputes"
+    },
+    "hendrycks_test_select_philosophy": {
+        "path": "zlucia/hendrycks_test_select",
+        "name": "philosophy",
+        "phase_list": ["train"],
+        "phase_map": None,
+        "jiant_task_name": "hendrycks_test_philosophy"
+    }
 }
 
 # HF-Datasets uses "validation", we use "val"

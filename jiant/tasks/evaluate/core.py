@@ -1050,7 +1050,13 @@ def get_evaluation_scheme_for_task(task) -> BaseEvaluationScheme:
         ),
     ):
         return MultipleChoiceAccuracyEvaluationScheme()
-    elif isinstance(task, tasks_retrieval.CaseholdTask):
+    elif isinstance(
+        task, 
+        (
+            tasks_retrieval.CaseholdTask,
+            tasks_retrieval.HendrycksTestSelectTask,
+        ),
+    ):
         return MultipleChoiceAccAndF1EvaluationScheme()
     elif isinstance(task, (tasks_retrieval.MrpcTask, tasks_retrieval.QqpTask)):
         return AccAndF1EvaluationScheme()
