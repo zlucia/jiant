@@ -25,7 +25,7 @@ def convert_hf_dataset_to_examples(
     Returns:
         Dict[phase] -> list[examples]
     """
-    dataset = datasets.load_dataset(path=path, name=name, version=version)
+    dataset = datasets.load_dataset(path=path, name=name, version=version, use_auth_token=True)
     if phase_map:
         for old_phase_name, new_phase_name in phase_map.items():
             replace_key(dataset, old_key=old_phase_name, new_key=new_phase_name)
