@@ -241,6 +241,10 @@ HF_DATASETS_CONVERSION_DICT = {
         "phase_list": ["train"],
         "phase_map": None,
         "jiant_task_name": "philosophy"
+    },
+    "mbe": {
+        "path": "zlucia/mbe",
+        "phase_list": ["train", "val"]
     }
 }
 

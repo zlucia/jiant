@@ -1055,6 +1055,7 @@ def get_evaluation_scheme_for_task(task) -> BaseEvaluationScheme:
         (
             tasks_retrieval.CaseholdTask,
             tasks_retrieval.HendrycksTestSelectTask,
+            tasks_retrieval.MbeTask,
         ),
     ):
         return MultipleChoiceAccAndF1EvaluationScheme()

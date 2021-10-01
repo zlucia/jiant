@@ -67,5 +67,6 @@ OTHER_HF_DATASETS_TASKS = {
     "hendrycks_test_select_jurisprudence",
     "hendrycks_test_select_logical_fallacies",
     "hendrycks_test_select_moral_disputes",
-    "hendrycks_test_select_philosophy"
+    "hendrycks_test_select_philosophy",
+    "mbe"
 }
