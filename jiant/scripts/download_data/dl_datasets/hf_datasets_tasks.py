@@ -198,49 +198,49 @@ HF_DATASETS_CONVERSION_DICT = {
         "name": "formal_logic",
         "phase_list": ["train"],
         "phase_map": None,
-        "jiant_task_name": "formal_logic"
+        "jiant_task_name": "hendrycks_test_select"
     },
     "hendrycks_test_select_high_school_government_and_politics": {
         "path": "zlucia/hendrycks_test_select",
         "name": "high_school_government_and_politics",
         "phase_list": ["train"],
         "phase_map": None,
-        "jiant_task_name": "hs_gov_politics"
+        "jiant_task_name": "hendrycks_test_select"
     },
     "hendrycks_test_select_international_law": {
         "path": "zlucia/hendrycks_test_select",
         "name": "international_law",
         "phase_list": ["train"],
         "phase_map": None,
-        "jiant_task_name": "international_law"
+        "jiant_task_name": "hendrycks_test_select"
     },
     "hendrycks_test_select_jurisprudence": {
         "path": "zlucia/hendrycks_test_select",
         "name": "jurisprudence",
         "phase_list": ["train"],
         "phase_map": None,
-        "jiant_task_name": "jurisprudence"
+        "jiant_task_name": "hendrycks_test_select"
     },
     "hendrycks_test_select_logical_fallacies": {
         "path": "zlucia/hendrycks_test_select",
         "name": "logical_fallacies",
         "phase_list": ["train"],
         "phase_map": None,
-        "jiant_task_name": "logical_fallacies"
+        "jiant_task_name": "hendrycks_test_select"
     },
     "hendrycks_test_select_moral_disputes": {
         "path": "zlucia/hendrycks_test_select",
         "name": "moral_disputes",
         "phase_list": ["train"],
         "phase_map": None,
-        "jiant_task_name": "moral_disputes"
+        "jiant_task_name": "hendrycks_test_select"
     },
     "hendrycks_test_select_philosophy": {
         "path": "zlucia/hendrycks_test_select",
         "name": "philosophy",
         "phase_list": ["train"],
         "phase_map": None,
-        "jiant_task_name": "philosophy"
+        "jiant_task_name": "hendrycks_test_select"
     },
     "mbe": {
         "path": "zlucia/mbe",
