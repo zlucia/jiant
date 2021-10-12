@@ -187,55 +187,55 @@ HF_DATASETS_CONVERSION_DICT = {
         "jiant_task_name": "quail",
         "phase_map": {"validation": "val", "challenge": "test"},
     },
-    "casehold": {
-        "path": "zlucia/casehold",
+    "casehold_aux": {
+        "path": "zlucia/casehold_aux",
         "phase_list": ["train"],
         "phase_map": None,
         "label_map": {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4},
     },
-    "hendrycks_test_select_formal_logic": {
+    "hendrycks_formal_logic": {
         "path": "zlucia/hendrycks_test_select",
         "name": "formal_logic",
         "phase_list": ["train"],
         "phase_map": None,
         "jiant_task_name": "hendrycks_test_select"
     },
-    "hendrycks_test_select_high_school_government_and_politics": {
+    "hendrycks_hs_gov_politics": {
         "path": "zlucia/hendrycks_test_select",
         "name": "high_school_government_and_politics",
         "phase_list": ["train"],
         "phase_map": None,
         "jiant_task_name": "hendrycks_test_select"
     },
-    "hendrycks_test_select_international_law": {
+    "hendrycks_intl_law": {
         "path": "zlucia/hendrycks_test_select",
         "name": "international_law",
         "phase_list": ["train"],
         "phase_map": None,
         "jiant_task_name": "hendrycks_test_select"
     },
-    "hendrycks_test_select_jurisprudence": {
+    "hendrycks_jurisprudence": {
         "path": "zlucia/hendrycks_test_select",
         "name": "jurisprudence",
         "phase_list": ["train"],
         "phase_map": None,
         "jiant_task_name": "hendrycks_test_select"
     },
-    "hendrycks_test_select_logical_fallacies": {
+    "hendrycks_logical_fallacies": {
         "path": "zlucia/hendrycks_test_select",
         "name": "logical_fallacies",
         "phase_list": ["train"],
         "phase_map": None,
         "jiant_task_name": "hendrycks_test_select"
     },
-    "hendrycks_test_select_moral_disputes": {
+    "hendrycks_moral_disputes": {
         "path": "zlucia/hendrycks_test_select",
         "name": "moral_disputes",
         "phase_list": ["train"],
         "phase_map": None,
         "jiant_task_name": "hendrycks_test_select"
     },
-    "hendrycks_test_select_philosophy": {
+    "hendrycks_philosophy": {
         "path": "zlucia/hendrycks_test_select",
         "name": "philosophy",
         "phase_list": ["train"],
