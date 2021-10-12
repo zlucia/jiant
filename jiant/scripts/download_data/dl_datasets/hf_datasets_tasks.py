@@ -187,11 +187,12 @@ HF_DATASETS_CONVERSION_DICT = {
         "jiant_task_name": "quail",
         "phase_map": {"validation": "val", "challenge": "test"},
     },
-    "casehold_aux": {
+    "casehold": {
         "path": "zlucia/casehold_aux",
         "phase_list": ["train"],
         "phase_map": None,
         "label_map": {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4},
+        "jiant_task_name": "casehold"
     },
     "hendrycks_formal_logic": {
         "path": "zlucia/hendrycks_test_select",
