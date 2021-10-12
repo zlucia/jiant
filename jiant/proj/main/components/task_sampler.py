@@ -210,6 +210,7 @@ class BaseMetricAggregator(metaclass=abc.ABCMeta):
 
 class EqualMetricAggregator(BaseMetricAggregator):
     def aggregate(self, major_metrics_dict: Dict[str, float]):
+        print(major_metrics_dict)
         return np.mean([x for x in major_metrics_dict.values()])
 
 
@@ -249,6 +250,7 @@ def create_metric_aggregator(metric_aggregator_config: Dict) -> BaseMetricAggreg
 
 
 def compute_aggregate_major_metrics_from_results_dict(metrics_aggregator, results_dict):
+    print(results_dict)
     major_metrics_dict = {
         task_name: results["metrics"].major for task_name, results in results_dict.items()
     }
