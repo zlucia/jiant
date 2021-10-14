@@ -422,12 +422,13 @@ class MultipleChoiceAccAndF1EvaluationScheme(BaseLogitsEvaluationScheme): # macr
     def compute_metrics_from_preds_and_labels(cls, preds, labels):
         acc = float((preds == labels).mean())
         labels = np.array(labels)
+        # Use macro F1 for multiple choice, metrics for each class should not be weighted by class frequency
+        # Assume that in the limit, classes are balanced
         f1_macro = f1_score(y_true=labels, y_pred=preds, average="macro")
 
         minor = {
             "acc": acc,
             "f1_macro": f1_macro,
-            "acc_and_f1_macro": (acc + f1_macro) / 2,
         }
         return Metrics(major=minor["acc"], minor=minor)
 

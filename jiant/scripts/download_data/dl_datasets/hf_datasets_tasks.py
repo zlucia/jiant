@@ -243,9 +243,125 @@ HF_DATASETS_CONVERSION_DICT = {
         "phase_map": None,
         "jiant_task_name": "hendrycks_test_select"
     },
-    "mbe": {
+    "mbe_fold_1_val": {
         "path": "zlucia/mbe",
-        "phase_list": ["train", "val"]
+        "name": "fold_1_val",
+        "phase_list": ["train", "val"],
+        "jiant_task_name": "mbe"
+    },
+    "mbe_fold_1_test": {
+        "path": "zlucia/mbe",
+        "name": "fold_1_test",
+        "phase_list": ["train", "val"],
+        "jiant_task_name": "mbe"
+    },
+    "mbe_fold_2_val": {
+        "path": "zlucia/mbe",
+        "name": "fold_2_val",
+        "phase_list": ["train", "val"],
+        "jiant_task_name": "mbe"
+    },
+    "mbe_fold_2_test": {
+        "path": "zlucia/mbe",
+        "name": "fold_2_test",
+        "phase_list": ["train", "val"],
+        "jiant_task_name": "mbe"
+    },
+    "mbe_fold_3_val": {
+        "path": "zlucia/mbe",
+        "name": "fold_3_val",
+        "phase_list": ["train", "val"],
+        "jiant_task_name": "mbe"
+    },
+    "mbe_fold_3_test": {
+        "path": "zlucia/mbe",
+        "name": "fold_3_test",
+        "phase_list": ["train", "val"],
+        "jiant_task_name": "mbe"
+    },
+    "mbe_fold_4_val": {
+        "path": "zlucia/mbe",
+        "name": "fold_4_val",
+        "phase_list": ["train", "val"],
+        "jiant_task_name": "mbe"
+    },
+    "mbe_fold_4_test": {
+        "path": "zlucia/mbe",
+        "name": "fold_4_test",
+        "phase_list": ["train", "val"],
+        "jiant_task_name": "mbe"
+    },
+    "mbe_fold_5_val": {
+        "path": "zlucia/mbe",
+        "name": "fold_5_val",
+        "phase_list": ["train", "val"],
+        "jiant_task_name": "mbe"
+    },
+    "mbe_fold_5_test": {
+        "path": "zlucia/mbe",
+        "name": "fold_5_test",
+        "phase_list": ["train", "val"],
+        "jiant_task_name": "mbe"
+    },
+    "mbe_fold_6_val": {
+        "path": "zlucia/mbe",
+        "name": "fold_6_val",
+        "phase_list": ["train", "val"],
+        "jiant_task_name": "mbe"
+    },
+    "mbe_fold_6_test": {
+        "path": "zlucia/mbe",
+        "name": "fold_6_test",
+        "phase_list": ["train", "val"],
+        "jiant_task_name": "mbe"
+    },
+    "mbe_fold_7_val": {
+        "path": "zlucia/mbe",
+        "name": "fold_7_val",
+        "phase_list": ["train", "val"],
+        "jiant_task_name": "mbe"
+    },
+    "mbe_fold_7_test": {
+        "path": "zlucia/mbe",
+        "name": "fold_7_test",
+        "phase_list": ["train", "val"],
+        "jiant_task_name": "mbe"
+    },
+    "mbe_fold_8_val": {
+        "path": "zlucia/mbe",
+        "name": "fold_8_val",
+        "phase_list": ["train", "val"],
+        "jiant_task_name": "mbe"
+    },
+    "mbe_fold_8_test": {
+        "path": "zlucia/mbe",
+        "name": "fold_8_test",
+        "phase_list": ["train", "val"],
+        "jiant_task_name": "mbe"
+    },
+    "mbe_fold_9_val": {
+        "path": "zlucia/mbe",
+        "name": "fold_9_val",
+        "phase_list": ["train", "val"],
+        "jiant_task_name": "mbe"
+    },
+    "mbe_fold_9_test": {
+        "path": "zlucia/mbe",
+        "name": "fold_9_test",
+        "phase_list": ["train", "val"],
+        "jiant_task_name": "mbe"
+    },
+    "mbe_fold_10_val": {
+        "path": "zlucia/mbe",
+        "name": "fold_10_val",
+        "phase_list": ["train", "val"],
+        "jiant_task_name": "mbe"
+    },
+    "mbe_fold_10_test": {
+        "path": "zlucia/mbe",
+        "name": "fold_10_test",
+        "phase_list": ["train", "val"],
+        "jiant_task_name": "mbe"
     }
 }
 
