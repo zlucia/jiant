@@ -140,10 +140,10 @@ def run_loop(args: RunConfiguration, checkpoint=None):
         )
 
         # Assumes there is at least one training task and at least one val task
-        task_name = jiant_task_container.task_specific_configs_dict.keys()[0]
+        task_name = jiant_task_container.task_run_config.train_task_list[0]
         wandb.init(
             config={
-                "per_device_train_batch_size": jiant_task_container.task_specific_configs_dict[task_name]["train_batch_size"],
+                "per_device_train_batch_size": jiant_task_container.task_specific_configs[task_name].train_batch_size,
                 "learning_rate": args.learning_rate
             }
         )
