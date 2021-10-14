@@ -13,6 +13,8 @@ import jiant.shared.model_setup as model_setup
 import jiant.utils.python.io as py_io
 import jiant.utils.zconf as zconf
 
+import wandb
+
 
 @zconf.run_config
 class RunConfiguration(zconf.RunConfig):
