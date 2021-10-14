@@ -93,6 +93,7 @@ def setup_runner(
             jiant_model=jiant_model, weights_path=args.model_path, load_mode=args.model_load_mode
         )
         jiant_model.to(quick_init_out.device)
+        wandb.watch(jiant_model)
 
     optimizer_scheduler = model_setup.create_optimizer(
         model=jiant_model,
@@ -137,6 +138,17 @@ def run_loop(args: RunConfiguration, checkpoint=None):
         jiant_task_container = container_setup.create_jiant_task_container_from_json(
             jiant_task_container_config_path=args.jiant_task_container_config_path, verbose=True,
         )
+
+        # Assumes there is at least one training task and at least one val task
+        task_name = jiant_task_container.task_specific_configs_dict.keys()[0]
+        wandb.init(
+            config={
+                "per_device_train_batch_size": jiant_task_container.task_specific_configs_dict[task_name]["train_batch_size"],
+                "learning_rate": args.learning_rate
+            }
+        )
+        wandb.run.name = args.hf_pretrained_model_name_or_path + "/" + jiant_task_container.val_task_list[0]
+
         runner = setup_runner(
             args=args,
             jiant_task_container=jiant_task_container,
