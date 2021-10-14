@@ -127,9 +127,9 @@ class JiantRunner:
         )
 
         wandb.log({
-            task_name + ":task_step": train_state.task_steps[task_name],
+            "train/" + task_name + "/task_step": train_state.task_steps[task_name],
             "train/global_step": train_state.global_steps,
-            task_name + ":train/loss": loss_val / task_specific_config.gradient_accumulation_steps
+            "train/" + task_name + "/loss": loss_val / task_specific_config.gradient_accumulation_steps
         })
 
     def run_val(self, task_name_list, use_subset=None, return_preds=False, verbose=True):
@@ -320,7 +320,7 @@ def run_val(
         "eval/f1": output["metrics"].minor["f1_macro"],
         "eval/accuracy": output["metrics"].minor["acc"]
     })
-    
+
     if return_preds:
         output["preds"] = evaluation_scheme.get_preds_from_accumulator(
             task=task, accumulator=eval_accumulator,
