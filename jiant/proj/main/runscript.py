@@ -149,8 +149,8 @@ def run_loop(args: RunConfiguration, checkpoint=None):
                 "learning_rate": args.learning_rate
             }
         )
-        wandb.run.name = args.hf_pretrained_model_name_or_path + "/" + jiant_task_container.val_task_list[0]
-
+        wandb.run.name = args.hf_pretrained_model_name_or_path + "/" + jiant_task_container.task_run_config.val_task_list[0]
+        
         runner = setup_runner(
             args=args,
             jiant_task_container=jiant_task_container,
