@@ -316,9 +316,9 @@ def run_val(
     }
 
     wandb.log({
-        "eval/loss": eval_loss,
-        "eval/f1": output["metrics"].minor["f1_macro"],
-        "eval/accuracy": output["metrics"].minor["acc"]
+        "eval/" + task.name + "/loss": eval_loss,
+        "eval/" + task.name + "/f1": output["metrics"].minor["f1_macro"],
+        "eval/" + task.name + "/accuracy": output["metrics"].minor["acc"]
     })
 
     if return_preds:

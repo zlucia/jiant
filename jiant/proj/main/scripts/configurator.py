@@ -255,6 +255,7 @@ class SimpleAPIMultiTaskConfigurator(zconf.RunConfig):
     num_gpus = zconf.attr(type=int, default=None)
     train_examples_cap = zconf.attr(type=int, default=None)
     warmup_steps_proportion = zconf.attr(type=float, default=0.1)
+    sampler_type = zconf.attr(type=float, default="UniformMultiTaskSampler")
 
     @classmethod
     def parse_task_name_list(cls, task_name_list_arg):
@@ -388,16 +389,19 @@ class SimpleAPIMultiTaskConfigurator(zconf.RunConfig):
             eval_batch_size = self.eval_batch_size
 
         # === Configure Sampler === #
-        # We sample proportionally by default, unless our training examples are capped per task
-        if self.train_examples_cap is None:
-            sampler_config = {
-                "sampler_type": "ProportionalMultiTaskSampler",
-            }
-        else:
-            sampler_config = {
-                "sampler_type": "SpecifiedProbMultiTaskSampler",
-                "task_to_unweighted_probs": capped_num_examples_dict,
-            }
+        # We sample uniformly by default
+        sampler_config = {"sampler_type": self.sampler_type}
+        
+        # # We sample proportionally by default, unless our training examples are capped per task
+        # if self.train_examples_cap is None:
+        #     sampler_config = {
+        #         "sampler_type": "ProportionalMultiTaskSampler",
+        #     }
+        # else:
+        #     sampler_config = {
+        #         "sampler_type": "SpecifiedProbMultiTaskSampler",
+        #         "task_to_unweighted_probs": capped_num_examples_dict,
+        #     }
 
         # === Build configuration === #
         # Finally, we build our big config dictionary. Congrats!
